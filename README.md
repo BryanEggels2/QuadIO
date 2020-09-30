@@ -67,15 +67,17 @@ Accepts a JSON like the previous, but only with one question in it to see if tha
 # Reflection
 
 #### What i'd do differently:
-create seperate DTO for the question (in and output)
+Create seperate DTO for the question (in and output)
 
-seperate interface for repo and service layer
+Seperate interface for repo and service layer
+
+Apperantly you can use an interface to inject the implementation you want to use in spring boot (Like API and Mock service enum i created). This makes my code not needed.
 
 
 #### What i'd add:
 
-do something with return codes
+Do something with return codes
 
-give Questions an ID
+Give Questions an ID
 
-better error handling
+Better error handling
