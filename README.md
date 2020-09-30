@@ -3,6 +3,7 @@
 
 ### Docker
 ```sh
+$ ./mvnw package && java -jar target/quadTrivia.jar
 $ docker build -t quad/trivia .
 $ docker run -p 8080:8080 quad/trivia
 ```
