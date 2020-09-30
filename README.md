@@ -61,3 +61,17 @@ This endpoint returns a list of correct and incorrect answered questions.
 
 ## /checkanswer
 Accepts a JSON like the previous, but only with one question in it to see if that specific answer is correct. Returns true or false.
+
+
+
+### Reflection
+
+#### What i'd do differently:
+create seperate DTO for the question (in and output)
+seperate interface for repo and service layer
+
+
+#### What i'd add:
+do something with return codes
+give Questions an ID
+better error handling
