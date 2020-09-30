@@ -68,10 +68,14 @@ Accepts a JSON like the previous, but only with one question in it to see if tha
 
 #### What i'd do differently:
 create seperate DTO for the question (in and output)
+
 seperate interface for repo and service layer
 
 
 #### What i'd add:
+
 do something with return codes
+
 give Questions an ID
+
 better error handling
