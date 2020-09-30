@@ -26,7 +26,7 @@ Accepts a result object with an ID and multiple questions. the givenAnswers fiel
 Example:
 ```
 {
-    "id": "2",
+    "id": "1",
     "results": [
         {
             "category": "General Knowledge",
