@@ -4,7 +4,7 @@
 ### Docker
 ```sh
 $ docker build -t quad/trivia .
-$ docker run -p 8080:8080 quad/opentdb
+$ docker run -p 8080:8080 quad/trivia
 ```
 
 now you can navigate to localhost:8080/questions
