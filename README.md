@@ -60,4 +60,4 @@ This endpoint returns a list of correct and incorrect answered questions.
 
 
 ## /checkanswer
-Accepts a result like the previous, but only with one question in it to see if that specific answer is correct. Returns true or false.
+Accepts a JSON like the previous, but only with one question in it to see if that specific answer is correct. Returns true or false.
