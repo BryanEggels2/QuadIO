@@ -1,7 +1,7 @@
 package quad.trivia.api.Services.Implementations.Mock;
 
 import quad.trivia.api.Models.Question;
-import quad.trivia.api.Models.Result;
+import quad.trivia.api.Models.ResultIn;
 import quad.trivia.api.Services.Interfaces.ResultServiceInterface;
 
 import java.util.ArrayList;
@@ -10,13 +10,13 @@ import java.util.Map;
 
 public class ResultMockService implements ResultServiceInterface {
 
-    Map<Integer, Result> results = new HashMap<>();
+    Map<Integer, ResultIn> results = new HashMap<>();
     int id = 1;
 
     @Override
-    public Result GetQuestions(Map<String, String> parameters) {
+    public ResultIn GetQuestions(Map<String, String> parameters) {
 
-        Result result = new Result();
+        ResultIn result = new ResultIn();
         String[] incorrect1 = new String[3];
         incorrect1[0] = "Clyde";
         incorrect1[1] = "Tweed";
@@ -53,12 +53,12 @@ public class ResultMockService implements ResultServiceInterface {
     }
 
     @Override
-    public Result GetResults(int id) {
+    public ResultIn GetResults(int id) {
         return results.get(id);
     }
 
     @Override
-    public void addResult(Result result) {
+    public void addResult(ResultIn result) {
         result.setId(String.valueOf(id));
         results.put(id,result);
         id++;

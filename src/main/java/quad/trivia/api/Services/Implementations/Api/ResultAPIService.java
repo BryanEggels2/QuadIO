@@ -1,6 +1,6 @@
 package quad.trivia.api.Services.Implementations.Api;
 
-import quad.trivia.api.Models.Result;
+import quad.trivia.api.Models.ResultIn;
 import quad.trivia.api.Services.Interfaces.ResultServiceInterface;
 import com.google.gson.Gson;
 import org.apache.http.client.ClientProtocolException;
@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class ResultAPIService implements ResultServiceInterface {
 
-    Map<Integer, Result> results = new HashMap<>();
+    Map<Integer, ResultIn> results = new HashMap<>();
     int id = 1;
 
 
@@ -26,11 +26,11 @@ public class ResultAPIService implements ResultServiceInterface {
      * You can pass the desired parameters in the map
     */
     @Override
-    public Result GetQuestions(Map<String, String> parameters) {
+    public ResultIn GetQuestions(Map<String, String> parameters) {
         if(Integer.valueOf(parameters.get("amount")) > 50 ){
             parameters.put("amount", "50");
         }
-        Result result = new Result();
+        ResultIn result = new ResultIn();
         try{
             //this piece of code builds the URL with the desired parameters
             URIBuilder builder = new URIBuilder("https://opentdb.com/api.php");
@@ -43,7 +43,7 @@ public class ResultAPIService implements ResultServiceInterface {
                     .socketTimeout(1000)
                     .execute().returnContent().asString();
             //convert the request Json to a class using GSON (Google's own json converter)
-            result = new Gson().fromJson(json, Result.class);
+            result = new Gson().fromJson(json, ResultIn.class);
         } catch (ClientProtocolException e) {
             e.getMessage();
         } catch (IOException e) {
@@ -62,7 +62,7 @@ public class ResultAPIService implements ResultServiceInterface {
      * @return result
      */
     @Override
-    public Result GetResults(int id) {
+    public ResultIn GetResults(int id) {
         try{
             return results.get(id);
         }
@@ -78,7 +78,7 @@ public class ResultAPIService implements ResultServiceInterface {
      * @param result
      */
     @Override
-    public void addResult(Result result) {
+    public void addResult(ResultIn result) {
         results.put(id,result);
         id++;
     }

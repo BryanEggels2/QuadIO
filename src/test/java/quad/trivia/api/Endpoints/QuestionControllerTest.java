@@ -2,7 +2,8 @@ package quad.trivia.api.Endpoints;
 
 import org.junit.jupiter.api.Test;
 import quad.trivia.api.Models.Question;
-import quad.trivia.api.Models.Result;
+import quad.trivia.api.Models.ResultIn;
+import quad.trivia.api.Models.ResultOut;
 import quad.trivia.api.Repositories.Repository;
 import quad.trivia.api.Services.Service;
 
@@ -19,7 +20,7 @@ class QuestionControllerTest {
         QuestionController controller = new QuestionController();
         Map<String, String> parameters = new HashMap<>();
         parameters.put("amount", "500");
-        Result result = controller.questions(parameters);
+        ResultIn result = controller.questions(parameters);
         result.getResults();
         assertEquals(50, result.getResults().size());
     }
@@ -34,7 +35,7 @@ class QuestionControllerTest {
         //category 9 is general knowledge
         parameters.put("category", "9");
         parameters.put("type", "multiple");
-        Result result = controller.questions(parameters);
+        ResultIn result = controller.questions(parameters);
         result.getResults();
         for (Question question: result.getResults()) {
             if(!question.getDifficulty().equals("easy")){
@@ -55,7 +56,7 @@ class QuestionControllerTest {
         //category 9 is general knowledge
         parameters.put("category", "9");
         parameters.put("type", "multiple");
-        Result result = controller.questions(parameters);
+        ResultIn result = controller.questions(parameters);
         result.getResults();
 
         for (Question question: result.getResults()) {
@@ -77,7 +78,7 @@ class QuestionControllerTest {
         //category 9 is general knowledge
         parameters.put("category", "9");
         parameters.put("type", "multiple");
-        Result result = controller.questions(parameters);
+        ResultIn result = controller.questions(parameters);
         result.getResults();
 
         for (Question question: result.getResults()) {
@@ -100,7 +101,7 @@ class QuestionControllerTest {
         //category 9 is general knowledge
         parameters.put("category", "8");
         parameters.put("type", "boolean");
-        Result result = controller.questions(parameters);
+        ResultIn result = controller.questions(parameters);
         result.getResults();
 
         for (Question question : result.getResults()) {
@@ -133,13 +134,13 @@ class QuestionControllerTest {
         //category 9 is general knowledge
         parameters.put("category", "9");
         parameters.put("type", "boolean");
-        Result result = controller.questions(parameters);
+        ResultIn result = controller.questions(parameters);
 
         for (Question q : result.getResults()){
             q.setgivenAnswer(q.getCorrect_answer());
         }
-        Result r = controller.checkAnswers(result);
-        assertEquals(5, r.getCorrect());
+        ResultOut r = controller.checkAnswers(result);
+        assertEquals(5, r.getAmountCorrect());
 
 
 
@@ -154,13 +155,13 @@ class QuestionControllerTest {
         //category 9 is general knowledge
         parameters.put("category", "9");
         parameters.put("type", "boolean");
-        Result result = controller.questions(parameters);
+        ResultIn result = controller.questions(parameters);
 
 
         result.getResults().get(0).setgivenAnswer(result.getResults().get(0).getCorrect_answer());
         result.getResults().get(1).setgivenAnswer("wrong");
-        Result r = controller.checkAnswers(result);
-        assertEquals(1, r.getCorrect());
+        ResultOut r = controller.checkAnswers(result);
+        assertEquals(1, r.getAmountCorrect());
 
 
 

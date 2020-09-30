@@ -1,6 +1,6 @@
 package quad.trivia.api.Services.Interfaces;
 
-import quad.trivia.api.Models.Result;
+import quad.trivia.api.Models.ResultIn;
 
 
 import java.util.Map;
@@ -10,9 +10,9 @@ import java.util.Map;
 */
 public interface ResultServiceInterface {
 
-    Result GetQuestions(Map <String, String> parameters);
+    ResultIn GetQuestions(Map <String, String> parameters);
 
-    Result GetResults(int id);
+    ResultIn GetResults(int id);
 
-    void addResult(Result result);
+    void addResult(ResultIn result);
 }

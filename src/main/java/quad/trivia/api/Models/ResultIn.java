@@ -1,10 +1,12 @@
 package quad.trivia.api.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Result {
+public class ResultIn {
     private String id;
     private int correct = 0;
+
 
     public int getCorrect() {
         return correct;
@@ -41,4 +43,8 @@ public class Result {
         correct++;
     }
     public void ResetCorrect(){correct = 0;}
+
+    public void AddCorrectAnswer(Question q) {
+
+    }
 }
