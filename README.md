@@ -2,10 +2,6 @@
 
 
 ### Docker
-
-For building the program you need at least Java8.
-
-
 ```sh
 $ docker build -t quad/trivia .
 $ docker run -p 8080:8080 quad/opentdb
