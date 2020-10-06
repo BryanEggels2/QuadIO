@@ -33,7 +33,7 @@ Example:
             "type": "multiple",
             "difficulty": "medium",
             "question": "Which river flows through the Scottish city of Glasgow?",
-			"givenAnswer": "Dee",
+	    "givenAnswer": "Dee",
             "possibleAnswers": [
                 "Clyde",
                 "Dee",
@@ -46,7 +46,7 @@ Example:
             "type": "multiple",
             "difficulty": "medium",
             "question": "What year did &quot;Bishoujo Senshi Sailor Moon&quot; air in Japan?",
-			"givenAnswer": "1989",
+	    "givenAnswer": "1989",
             "possibleAnswers": [
                 "1990",
                 "1992",
