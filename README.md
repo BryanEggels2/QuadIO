@@ -86,3 +86,5 @@ Better error handling
 {@link class} in my comments
 
 More unit tests
+
+Hystrix
