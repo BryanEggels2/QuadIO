@@ -72,7 +72,7 @@ Create seperate DTO for the question (in and output)
 
 Seperate interface for repo and service layer
 
-Apperantly you can use an interface to inject the implementation you want to use in spring boot (Like API and Mock service enum I created). This makes my service enum not needed.
+Apparantly you can use an interface to inject the implementation you want to use in spring boot (Like API and Mock service enum I created). This makes my service enum not needed.
 
 
 #### What i'd add:
